@@ -91,7 +91,9 @@ function updatePitch(analyserNode, detector, input, sampleRate) {
       const w = ctx.measureText(noteName + ' ').width
       ctx.fillText(noteName, 290, y - 8)
       ctx.font = '12px sans-serif'
-      ctx.fillText(`${Math.round(pitch)} Hz`, 290 + w, y - 8)
+      const deviation = Math.round((note - Math.round(note)) * 100)
+      const cents = `${deviation < 0 ? '' : '+'}${deviation}`
+      ctx.fillText(`${cents} (${Math.round(pitch)} Hz)`, 290 + w, y - 8)
     }
     ctx.restore()
     historyData.push(note)
