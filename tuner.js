@@ -50,7 +50,6 @@ function updatePitch(analyserNode, detector, input, sampleRate) {
     ctx.font = '12px sans-serif'
     ctx.fillText(`${pitchClasses[i % 12]}`, 32, getY(i) - 4)
   }
-  ctx.font = '32px sans-serif'
 
   if (clarity >= 0.9) {
     const o = (clarity - 0.9) / 0.1
@@ -87,7 +86,12 @@ function updatePitch(analyserNode, detector, input, sampleRate) {
 
       ctx.globalAlpha = o
       ctx.fillRect(280, y - 1, width - 280, 2)
-      ctx.fillText(`${name}${octave}`, 290, y - 8)
+      ctx.font = '32px sans-serif'
+      const noteName = `${name}${octave}`
+      const w = ctx.measureText(noteName + ' ').width
+      ctx.fillText(noteName, 290, y - 8)
+      ctx.font = '12px sans-serif'
+      ctx.fillText(`${Math.round(pitch)} Hz`, 290 + w, y - 8)
     }
     ctx.restore()
     historyData.push(note)
