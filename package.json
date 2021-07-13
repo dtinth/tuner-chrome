@@ -1,0 +1,17 @@
+{
+  "name": "tuner-chrome",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chrome": "^0.0.103"
+  },
+  "files": [
+    "vendor",
+    "tuner.html",
+    "tuner.js",
+    "tuner_48.png",
+    "tuner_128.png",
+    "manifest.json"
+  ],
+  "private": true
+}

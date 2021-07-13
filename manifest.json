@@ -1,0 +1,7 @@
+{
+  "manifest_version": 3,
+  "name": "tuner",
+  "version": "0.0",
+  "icons": { "48": "tuner_48.png", "128": "tuner_128.png" },
+  "action": { "default_popup": "tuner.html" }
+}

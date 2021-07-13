@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tuner</title>
+    <style>
+      html {
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 16px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div hidden id="please" style="color: rgb(252, 211, 77)">
+      Please accept permissions to use the microphone to use the tuner.
+    </div>
+    <div hidden id="granted" style="color: rgb(110, 231, 183)">
+      Yay thanks! Click the tuner icon to start.
+    </div>
+    <div hidden id="denied" style="color: rgb(252, 165, 165)">
+      Got rejected :(
+    </div>
+    <script src="grant.js"></script>
+  </body>
+</html>

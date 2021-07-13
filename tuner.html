@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tuner</title>
+    <style>
+      html {
+        width: 480px;
+        height: 320px;
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 480px;
+        height: 320px;
+      }
+      #micNeeded {
+        position: relative;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="historyCanvas" width="480" height="320"></canvas>
+    <canvas id="canvas" width="480" height="320"></canvas>
+    <div id="micNeeded" hidden>
+      Need microphone access
+      <button id="grant">Grant</button>
+    </div>
+    <script src="vendor/pitchy@2.0.3.js"></script>
+    <script src="tuner.js"></script>
+  </body>
+</html>
