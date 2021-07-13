@@ -2,6 +2,10 @@
 
 A chromatic tuner for your browser. Powered by [pitchy](https://github.com/ianprime0509/pitchy).
 
+![ss](https://user-images.githubusercontent.com/193136/125518766-d8938442-1dcd-43f4-9233-f022bba575d4.png)
+
+Submission to Chrome Web Store in progress.
+
 ## Packaging this extension
 
 ```bash
