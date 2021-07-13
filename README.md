@@ -1,3 +1,9 @@
+# tuner
+
+A chromatic tuner for your browser. Powered by [pitchy](https://github.com/ianprime0509/pitchy).
+
+## Packaging this extension
+
 ```bash
 # Generates an extension package
 ./scripts/build-package.sh

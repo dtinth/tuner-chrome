@@ -7,6 +7,8 @@
   },
   "files": [
     "vendor",
+    "grant.html",
+    "grant.js",
     "tuner.html",
     "tuner.js",
     "tuner_48.png",
