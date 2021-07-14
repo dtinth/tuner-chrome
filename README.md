@@ -2,9 +2,7 @@
 
 A chromatic tuner for your browser. Powered by [pitchy](https://github.com/ianprime0509/pitchy).
 
-![ss](https://user-images.githubusercontent.com/193136/125518766-d8938442-1dcd-43f4-9233-f022bba575d4.png)
-
-Submission to Chrome Web Store in progress.
+[![Screenshot](https://user-images.githubusercontent.com/193136/125518766-d8938442-1dcd-43f4-9233-f022bba575d4.png)<br><br>![Available in Chrome web store](https://user-images.githubusercontent.com/193136/125632736-2b79be0c-952a-48c5-820c-8b5c86ff50e8.png)](https://chrome.google.com/webstore/detail/tuner/aljjbggdbpfcefnliggdhejickokofej)
 
 ## Packaging this extension
 
