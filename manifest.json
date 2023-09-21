@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "tuner",
   "description": "A chromatic tuner for your browser????",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "icons": { "48": "tuner_48.png", "128": "tuner_128.png" },
   "action": { "default_popup": "tuner.html" }
 }
