@@ -6,6 +6,37 @@ const ctx = canvas.getContext('2d')
 const hctx = historyCanvas.getContext('2d')
 let note = 0
 
+/** @typedef {'roland' | 'yamaha' | 'cakewalk'} NotationMode */
+/** @type {HTMLSelectElement} */
+const notation = document.getElementById('notation')
+let notationMode = 'roland'
+
+const setNotationMode = (mode) => {
+  notationMode = mode
+  notation.value = mode
+}
+const loadNotationMode = () => {
+  if (typeof chrome !== 'undefined') {
+    chrome.storage.sync.get(['notationMode'], (result) => {
+      if (result.notationMode) {
+        setNotationMode(result.notationMode)
+      }
+    })
+  } else if (localStorage.notationMode) {
+    setNotationMode(localStorage.notationMode)
+  } else {
+    setNotationMode('roland')
+  }
+}
+notation.onchange = () => {
+  notationMode = notation.value
+  if (typeof chrome !== 'undefined') {
+    chrome.storage.sync.set({ notationMode })
+  } else {
+    localStorage.notationMode = notationMode
+  }
+}
+
 function ftom(f) {
   return 69 + (12.0 * Math.log(f / 440)) / Math.log(2)
 }
@@ -24,6 +55,19 @@ const pitchClasses = [
   'Bb',
   'B',
 ]
+
+const getOctave = (midiNumber) => {
+  switch (notationMode) {
+    case 'roland':
+      return Math.floor(midiNumber / 12) - 1
+    case 'yamaha':
+      return Math.floor(midiNumber / 12) - 2
+    case 'cakewalk':
+      return Math.floor(midiNumber / 12)
+    default: // Just fall back to Roland, because it is the Scientific Pitch Notation
+      return Math.floor(midiNumber / 12) - 1
+  }
+}
 
 function updatePitch(analyserNode, detector, input, sampleRate) {
   analyserNode.getFloatTimeDomainData(input)
@@ -55,7 +99,7 @@ function updatePitch(analyserNode, detector, input, sampleRate) {
     const o = (clarity - 0.9) / 0.1
     const p = note % 12
     const closestNote = Math.round(note)
-    const octave = Math.floor(note / 12) - 2
+    const octave = getOctave(closestNote)
     let pitchClass = closestNote % 12
     if (pitchClass >= 12) pitchClass -= 12
     if (pitchClass < 0) pitchClass += 12
